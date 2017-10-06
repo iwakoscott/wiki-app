@@ -11,12 +11,14 @@ WikipediaViewModel = function(){
 
   that.query = ko.observable("");
   that.articles = ko.observableArray();
+  that.error = ko.observable(false);
 
   that.setMargin = ko.computed(function(){
-    if (!that.query()) {
+    if (!that.query() || that.error()) {
       $('.main-box').animate({"margin-top": "15%", "height": "350px"});
       $('.main-header').fadeIn('slow');
       that.articles([]);
+      that.error(false);
     }
   });
 
@@ -70,7 +72,8 @@ WikipediaViewModel = function(){
 
     var wikiTimeout = setTimeout(function(){
       alert('Wikipedia articles could not be loaded at this time...');
-    }, 10000)
+      that.error(true);
+    }, 8000)
 
     var url = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + that.query() + '&format=json&callback=wikiCallback';
     $('.main-box').animate({"margin-top": 0, 'height': '275px'});
