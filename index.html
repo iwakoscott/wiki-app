@@ -1,9 +1,33 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="static/lib/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="static/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"/>
   </head>
   <body>
+    <!-- Main section -->
+    <section class="container main-box">
 
+      <h1 class="main-header">Wiki Search</h1>
+
+      <section class="container-fluid secondary-box">
+
+        <i class="fa fa-search" data-bind="click: getSearchBar"></i>
+
+        <form class="search" data-bind="submit: searchForArticle">
+          <input class="search-bar form-control" data-bind="textInput: query" type="text"/>
+          <button class="btn btn-primary search-button"><i class="fa fa-arrow-circle-right"></i></button>
+        </form>
+        <i class="fa fa-random" data-bind="click: getRandomArticle"></i>
+      </section>
+
+    </section>
+
+    <section class="container articles">
+    </section>
 
     <!-- Scripts -->
     <script src="static/lib/jquery-3.2.1.js"></script>
