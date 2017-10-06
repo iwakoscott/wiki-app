@@ -70,6 +70,7 @@ WikipediaViewModel = function(){
 
     var wikiTimeout = setTimeout(function(){
       alert('Wikipedia articles could not be loaded at this time...');
+      that.setMargin();
     }, 10000)
 
     var url = 'http://en.wikipedia.org/w/api.php?action=opensearch&search=' + that.query() + '&format=json&callback=wikiCallback';
