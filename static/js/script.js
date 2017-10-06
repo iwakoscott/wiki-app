@@ -67,6 +67,10 @@ WikipediaViewModel = function(){
 
   that.searchForArticle = function(){
 
+    if (!that.query()){
+      return;
+    }
+
     $('.articles').html('');
     that.articles([]);
 
