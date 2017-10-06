@@ -83,7 +83,7 @@ WikipediaViewModel = function(){
         var content = response[2];
         for (var i = 0; i < title.length; i++){
 
-          var WikiUrl = 'http://en.wikipedia.org/wiki/' + title[i];
+          var WikiUrl = 'https://en.wikipedia.org/wiki/' + title[i];
           that.articles.push({
             title: title[i],
             link: WikiUrl,
