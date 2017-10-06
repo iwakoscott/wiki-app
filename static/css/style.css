@@ -1,11 +1,11 @@
 * {
-  color: white;
+  color: black;
   font-family: 'Quicksand', sans-serif;
 }
 
 a {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 a:hover {
@@ -15,7 +15,7 @@ a:hover {
 
 body {
   position: relative;
-  background-image: url('../img/city.jpg');
+  background-image: url('../img/london.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -67,7 +67,7 @@ body {
   height: 320px;
   padding: 30px;
   min-width: 65%;
-  background: black;
+  background: white;
   opacity: 0.85;
   border-radius: 40px;
 }
@@ -90,7 +90,7 @@ body {
 
 .article-card {
   min-width: 65%;
-  background: black;
+  background: white;
   margin: 20px;
   opacity: .85;
   border-radius: 40px;
