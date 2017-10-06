@@ -72,7 +72,7 @@ WikipediaViewModel = function(){
       alert('Wikipedia articles could not be loaded at this time...');
     }, 10000)
 
-    var url = 'http://en.wikipedia.org/w/api.php?action=opensearch&search=' + that.query() + '&format=json&callback=wikiCallback';
+    var url = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + that.query() + '&format=json&callback=wikiCallback';
     $('.main-box').animate({"margin-top": 0, 'height': '275px'});
 
     $.ajax({
