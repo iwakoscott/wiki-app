@@ -99,7 +99,14 @@ body {
 
 
 @media screen and (max-width: 417px){
+
   .main-header {
     font-size: 27px;
   }
+
+  body {
+    background-image: url('../img/blur.jpg');
+  }
+
+
 }
