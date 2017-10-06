@@ -67,41 +67,40 @@ WikipediaViewModel = function(){
 
   that.searchForArticle = function(){
 
-    if (!that.query()){
-      return;
-    }
+    if (that.query()){
 
-    $('.articles').html('');
-    that.articles([]);
+      $('.articles').html('');
+      that.articles([]);
 
-    var wikiTimeout = setTimeout(function(){
-      alert('Wikipedia articles could not be loaded at this time...');
-      that.error(true);
-    }, 8000)
+      var wikiTimeout = setTimeout(function(){
+        alert('Wikipedia articles could not be loaded at this time...');
+        that.error(true);
+      }, 8000)
 
-    var url = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + that.query() + '&format=json&callback=wikiCallback';
-    $('.main-box').animate({"margin-top": 0, 'height': '275px'});
+      var url = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + that.query() + '&format=json&callback=wikiCallback';
+      $('.main-box').animate({"margin-top": 0, 'height': '275px'});
 
-    $.ajax({
-      url: url,
-      dataType: 'jsonp',
-      success: function(response){
-        var title = response[1];
-        var content = response[2];
-        for (var i = 0; i < title.length; i++){
+      $.ajax({
+        url: url,
+        dataType: 'jsonp',
+        success: function(response){
+          var title = response[1];
+          var content = response[2];
+          for (var i = 0; i < title.length; i++){
 
-          var WikiUrl = 'https://en.wikipedia.org/wiki/' + title[i];
-          that.articles.push({
-            title: title[i],
-            link: WikiUrl,
-            content: content[i]
-          });
+            var WikiUrl = 'https://en.wikipedia.org/wiki/' + title[i];
+            that.articles.push({
+              title: title[i],
+              link: WikiUrl,
+              content: content[i]
+            });
 
+          }
+
+          clearTimeout(wikiTimeout);
         }
-
-        clearTimeout(wikiTimeout);
-      }
-    });
+      });
+    }
   }
 }
 
