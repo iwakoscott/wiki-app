@@ -74,7 +74,7 @@ WikipediaViewModel = function(){
 
         if (!title.length) {
           that.articles.push({
-            title: "No Articles to Show for " + that.query() + '...',
+            title: 'No Articles to Show for "' + that.query() + '"...',
             link: null,
             content: null
           });
