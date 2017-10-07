@@ -29,8 +29,10 @@
     <section class="container articles" data-bind="if: articles().length > 0">
       <div data-bind="foreach: articles">
         <div class="container article-card">
-          <h3 class="article-title" data-bind="text: title"></h3>
-          <p class="article-content" data-bind="text: content"></p>
+          <a data-bind="attr: {href: link}">
+            <h3 class="article-title" data-bind="text: title"></h3>
+            <p class="article-content" data-bind="text: content"></p>
+          </a>
         </div>
       </div>
     </section>
