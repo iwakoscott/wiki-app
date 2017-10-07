@@ -28,7 +28,7 @@ WikipediaViewModel = function(){
       var article = that.articles()[i];
       $('.articles').append(
         '<a href="' + article.link  + '">' +
-        '<div class="article-card">' +
+        '<div class="container article-card">' +
           '<h3 class="article-title">' + article.title + '</h3>' +
           '<p class="article-content">' + article.content + '</p>' +
         '<div></a>'

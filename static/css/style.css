@@ -91,7 +91,8 @@ body {
 .article-card {
   min-width: 65%;
   background: white;
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   opacity: .85;
   border-radius: 40px;
   padding: 50px;
