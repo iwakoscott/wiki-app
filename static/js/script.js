@@ -22,22 +22,6 @@ WikipediaViewModel = function(){
     }
   });
 
-  that.showArticles = ko.computed(function(){
-    $('.articles').html('');
-    for (var i = 0; i < that.articles().length; i++){
-      var article = that.articles()[i];
-      $('.articles').append(
-        '<a href="' + article.link  + '">' +
-        '<div class="container article-card">' +
-          '<h3 class="article-title">' + article.title + '</h3>' +
-          '<p class="article-content">' + article.content + '</p>' +
-        '<div></a>'
-      );
-    }
-  });
-
-
-
   that.getSearchBar = function(){
     // expand search input
     function a(){
@@ -80,7 +64,6 @@ WikipediaViewModel = function(){
     }, 8000)
 
     var url = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + that.query() + '&format=json&callback=wikiCallback';
-    $('.main-box').animate({"margin-top": 0, 'height': '275px'});
 
     $.ajax({
       url: url,
@@ -88,6 +71,17 @@ WikipediaViewModel = function(){
       success: function(response){
         var title = response[1];
         var content = response[2];
+
+        if (!title.length) {
+          that.articles.push({
+            title: "No Articles to Show...",
+            link: null,
+            content: null
+          });
+        } else {
+          $('.main-box').animate({"margin-top": 0, 'height': '275px'});
+        }
+
         for (var i = 0; i < title.length; i++){
 
           var WikiUrl = 'https://en.wikipedia.org/wiki/' + title[i];
