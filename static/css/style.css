@@ -15,7 +15,7 @@ a:hover {
 
 body {
   position: relative;
-  background-image: url('../img/london.jpg');
+  background-image: url('../img/bokeh.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -38,7 +38,7 @@ body {
 .fa-search {
   cursor: pointer;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
 }
 
@@ -79,6 +79,7 @@ body {
 .secondary-box {
   position: relative;
   margin: 0;
+  margin-top: 75px;
   width: 100%;
 }
 
