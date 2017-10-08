@@ -25,9 +25,9 @@ WikipediaViewModel = function(){
   that.getSearchBar = function(){
     // expand search input
     function a(){
+      $('.search').animate({"width": "65%"}, 300);
       $('.fa-search').stop(true, true);
       var self = this;
-      $('.search').animate({"width": "65%"}, 300);
       window.setTimeout(function(){
         $(self).one('click', b);
       }, 300);
@@ -79,7 +79,7 @@ WikipediaViewModel = function(){
             content: null
           });
         } else {
-          $('.main-box').animate({"margin-top": 0, 'height': '275px'});
+          $('.main-box').animate({"margin-top": 0, 'height': '310px'});
         }
 
         for (var i = 0; i < title.length; i++){
