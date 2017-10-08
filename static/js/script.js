@@ -2,7 +2,7 @@
 $.fn.infBounce = function(){
   var self = this;
   (function runEffect(){
-    self.effect("bounce", {times: 15}, 3000, runEffect)
+    self.effect("bounce", {times: 25}, 3200, runEffect)
   })();
 }
 
@@ -27,23 +27,21 @@ WikipediaViewModel = function(){
     function a(){
       $('.search').animate({"width": "65%"}, 300);
       $('.fa-search').stop(true, true);
-      var self = this;
       window.setTimeout(function(){
-        $(self).one('click', b);
+        $('.fa-search').one('click', b);
       }, 300);
     }
 
     function b(){
-      var self = this;
       $('.search').animate({"width": "0"}, 300);
       window.setTimeout(function(){
-        $(self).one('click', a);
+        $('.fa-search').one('click', a);
         $('.fa-search').infBounce();
         that.query(null);
       }, 300);
     }
 
-    $('.fa-search').unbind().one('click', a);
+    $('.fa-search').unbind().one('click', a());
   }
   that.getRandomArticle = function(){
     window.open('https://en.wikipedia.org/wiki/Special:Random');
@@ -103,4 +101,4 @@ ko.applyBindings(new WikipediaViewModel());
 
 $(document).ready(function(){
   $('.fa-search').infBounce();
-})
+});
