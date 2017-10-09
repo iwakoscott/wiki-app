@@ -50,7 +50,7 @@ body {
 }
 
 .search-bar {
-  width: 100%;
+  width: 50%;
 }
 
 .search-button {
@@ -84,7 +84,6 @@ body {
 }
 
 .btn {
-  width: 100%;
   cursor: pointer;
 }
 

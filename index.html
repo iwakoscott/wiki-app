@@ -17,10 +17,13 @@
 
         <i class="fa fa-search" data-bind="click: getSearchBar"></i>
 
-        <form class="search" data-bind="submit: searchForArticle">
+        <form class="search input-group" data-bind="submit: searchForArticle">
           <input class="search-bar form-control" data-bind="textInput: query" type="text" placeholder="Enter Search Here..."/>
-          <button class="btn btn-basic search-button"><i class="fa fa-arrow-circle-right"></i></button>
+          <span>
+            <button class="btn btn-basic search-button"><i class="fa fa-arrow-circle-right"></i></button>
+          </span>
         </form>
+
         <i class="fa fa-random" data-bind="click: getRandomArticle"></i>
       </section>
 
